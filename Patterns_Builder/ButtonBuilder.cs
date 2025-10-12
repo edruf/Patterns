@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Patterns_Builder.ComponentsOfBuilding;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,45 +7,42 @@ using System.Threading.Tasks;
 
 namespace Patterns_Builder
 {
-    internal class ButtonBuilder
+    internal class ButtonBuilder : IBuilder
     {
-        bool flag = false;
-        Button button;
+        Button _button = new Button();
 
+        public ButtonBuilder() 
+        {
+            this.Reset();
+        }
+
+        public void Reset() 
+        {
+            this._button = new Button();
+        }
         public void SetSizes(int height, int width)
         {
-            ChekIfIsbuilt();
-            button.height = height;
-            button.width = width;
+            _button.height = height;
+            _button.width = width;
         }
         public void SetBackground(string background)
         {
-            ChekIfIsbuilt();
-            button.background = new Background(background);
+            _button.background = new Background(background);
         }
         public void SetText(string text)
         {
-            ChekIfIsbuilt();
-            button.text = new Text(text);
+            _button.text = new Text(text);
         }
         public void SetIcon(string icon)
         {
-            ChekIfIsbuilt();
-            button.icon = new Icon(icon);
+            _button.icon = new Icon(icon);
         }
         public Button GetButton()
         {
-            ChekIfIsbuilt();
-            flag = true;
-            this.button = new Button();
-            return button;
+            var result = this._button;
+            this.Reset();
+            return result;
         }
-        private void ChekIfIsbuilt()
-        {
-            if (flag)
-            {
-                throw new InvalidOperationException("Этот билдер уже использован");
-            }
-        }
+
     }
 }

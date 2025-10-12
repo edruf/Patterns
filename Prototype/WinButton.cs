@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,6 @@ namespace Patterns_Prototype
 
         public WinButton(string text, string color)
         {
-            if(text == null || color == null) throw new ArgumentNullException();
             _text = text;
             _color = color;
         }

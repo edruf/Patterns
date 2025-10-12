@@ -4,9 +4,16 @@ class Program
 {
     public static void Main()
     {
-        ButtonBuilder builder = new ButtonBuilder();
-        UIClient client = new UIClient(builder);
-        client.GetButtonWithIcon("иконка");
+        try 
+        {
+            ButtonBuilder builder = new ButtonBuilder();
+            UIClient client = new UIClient(builder);
+            client.GetButtonWithIcon("иконка");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
 

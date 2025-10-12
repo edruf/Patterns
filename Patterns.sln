@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.11018.127
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patterns_AbstractFactory", "Patterns_AbstractFactory\Patterns_AbstractFactory.csproj", "{302AF3DA-49A5-492B-885F-876DDFD969E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "Patterns_AbstractFactory\AbstractFactory.csproj", "{302AF3DA-49A5-492B-885F-876DDFD969E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patterns_Builder", "Patterns_Builder\Patterns_Builder.csproj", "{B64A19A3-AE74-4D53-99E6-6CA2FDAD371B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Patterns_Builder\Builder.csproj", "{B64A19A3-AE74-4D53-99E6-6CA2FDAD371B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns_FactoryMethod", "Patterns_FactoryMethod\Patterns_FactoryMethod.csproj", "{EDADFFD6-F763-4F4E-B4E0-1A2AF48A523C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethod", "Patterns_FactoryMethod\FactoryMethod.csproj", "{EDADFFD6-F763-4F4E-B4E0-1A2AF48A523C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns_Prototype", "Patterns_Prototype\Patterns_Prototype.csproj", "{579E038D-3467-433E-B028-F8247AEF8065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Patterns_Prototype\Prototype.csproj", "{579E038D-3467-433E-B028-F8247AEF8065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns__Singletone", "Patterns__Singletone\Patterns__Singletone.csproj", "{63DF5651-107E-4FDB-A324-3750D39014A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternsClassLibrary", "ClassLibrary1\PatternsClassLibrary.csproj", "{9EE04B70-CCE4-25F9-223F-5D91A0591A93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singletone", "Patterns__Singletone\Singletone.csproj", "{63DF5651-107E-4FDB-A324-3750D39014A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{63DF5651-107E-4FDB-A324-3750D39014A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63DF5651-107E-4FDB-A324-3750D39014A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63DF5651-107E-4FDB-A324-3750D39014A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EE04B70-CCE4-25F9-223F-5D91A0591A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EE04B70-CCE4-25F9-223F-5D91A0591A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EE04B70-CCE4-25F9-223F-5D91A0591A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EE04B70-CCE4-25F9-223F-5D91A0591A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

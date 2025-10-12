@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Patterns_Builder.ComponentsOfBuilding;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Patterns_Builder
         ButtonBuilder builder;
         public UIClient(ButtonBuilder builder)
         {
+            if (null == builder) throw new ArgumentNullException();
             this.builder = builder;
         }
         public Button GetButtonWithIcon(string icon)

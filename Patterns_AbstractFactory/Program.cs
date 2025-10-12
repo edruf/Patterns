@@ -1,31 +1,33 @@
 ﻿namespace Patterns_AbstractFactory;
-using PatternsClassLibrary;
+using Patterns_AbstractFactory.Buttons;
+using Patterns_AbstractFactory.Factories;
+using Patterns_AbstractFactory.Inputs;
 
 internal class Program
 {
     public static void Main()
     {
         UIFactory factory = new WinUIFactory();
-        IButton button = factory.GetButton(); // Используем публичный метод
+        Buttons.IButton button = factory.CreateButton();
         button.OnClick();
         button.OnDoubleClick();
-        IInput input = factory.GetInput(); // Используем публичный метод
+        IInput input = factory.CreateInput();
         input.InputText();
         input.Focus();
 
         factory = new MacUIFactory();
-        button = factory.GetButton();
+        button = factory.CreateButton();
         button.OnClick();
         button.OnDoubleClick();
-        input = factory.GetInput();
+        input = factory.CreateInput();
         input.InputText();
         input.Focus();
 
         factory = new LinuxUIFactory();
-        button = factory.GetButton();
+        button = factory.CreateButton();
         button.OnClick();
         button.OnDoubleClick();
-        input = factory.GetInput();
+        input = factory.CreateInput();
         input.InputText();
         input.Focus();
     }
