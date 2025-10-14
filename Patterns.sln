@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.11018.127
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "Patterns_AbstractFactory\AbstractFactory.csproj", "{302AF3DA-49A5-492B-885F-876DDFD969E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "Creational patterns\AbstractFactory\AbstractFactory.csproj", "{302AF3DA-49A5-492B-885F-876DDFD969E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Patterns_Builder\Builder.csproj", "{B64A19A3-AE74-4D53-99E6-6CA2FDAD371B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Creational patterns\Builder\Builder.csproj", "{B64A19A3-AE74-4D53-99E6-6CA2FDAD371B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethod", "Patterns_FactoryMethod\FactoryMethod.csproj", "{EDADFFD6-F763-4F4E-B4E0-1A2AF48A523C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethod", "Creational patterns\FactoryMethod\FactoryMethod.csproj", "{EDADFFD6-F763-4F4E-B4E0-1A2AF48A523C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Patterns_Prototype\Prototype.csproj", "{579E038D-3467-433E-B028-F8247AEF8065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Creational patterns\Prototype\Prototype.csproj", "{579E038D-3467-433E-B028-F8247AEF8065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singletone", "Patterns__Singletone\Singletone.csproj", "{63DF5651-107E-4FDB-A324-3750D39014A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singletone", "Creational patterns\Singletone\Singletone.csproj", "{63DF5651-107E-4FDB-A324-3750D39014A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational patterns", "Creational patterns", "{40C6F5F0-2BF8-48F2-9CDE-E7C86EE5B8F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural patterns", "Structural patterns", "{AB3B1D7B-CB2F-4771-ADC5-B4D078CCA336}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{F90A91A3-D01B-499F-85DF-DF46C41BFAE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Structural patterns\Adapter\Adapter.csproj", "{F90A91A3-D01B-499F-85DF-DF46C41BFAE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

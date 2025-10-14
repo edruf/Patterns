@@ -1,5 +1,4 @@
-﻿using PatternsClassLibrary;
-namespace Patterns__Singletone;
+﻿namespace Patterns__Singletone;
 
 class Program
 {

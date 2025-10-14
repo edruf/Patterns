@@ -12,7 +12,7 @@ namespace Patterns_FactoryMethod.UIFactories
         protected override UIComponent FactoryMethod()
         {
             Console.WriteLine("Построили Win текст");
-            return new Text("тест");
+            return new UIText("тест");
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Patterns_FactoryMethod.UIFactories
         protected override UIComponent FactoryMethod()
         {
             Console.WriteLine("Построили Win форму");
-            return new Form { _width = 800, _height = 600 };
+            return new UIForm { Width = 800, Height = 600 };
         }
     }
 
