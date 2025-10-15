@@ -39,7 +39,7 @@ namespace Patterns_Builder
         }
         public Button GetButton()
         {
-            var result = this._button;
+            var result = _button;
             this.Reset();
             return result;
         }

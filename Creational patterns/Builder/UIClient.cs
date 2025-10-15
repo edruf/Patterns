@@ -9,17 +9,11 @@ namespace Patterns_Builder
 {
     internal class UIClient
     {
-        ButtonBuilder builder;
-        public UIClient(ButtonBuilder builder)
+        IBuilder _builder;
+        public UIClient(IBuilder builder)
         {
             if (null == builder) throw new ArgumentNullException();
-            this.builder = builder;
-        }
-        public Button GetButtonWithIcon(string icon)
-        {
-            builder.SetSizes(20, 100);
-            builder.SetIcon(icon);
-            return builder.GetButton();
+            _builder = builder;
         }
     }
 }

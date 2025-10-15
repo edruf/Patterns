@@ -13,6 +13,5 @@ namespace Patterns_Builder
         void SetBackground(string background);
         void SetText(string text);
         void SetIcon(string icon);
-        Button GetButton();
     }
 }
