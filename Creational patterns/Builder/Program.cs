@@ -1,5 +1,8 @@
 ﻿using Builder;
+using Patterns_Builder.ComponentsOfBuilding;
 using System.Data.SqlTypes;
+using System.Text;
+using System.Threading.Channels;
 
 namespace Patterns_Builder;
 
@@ -7,36 +10,29 @@ class Program
 {
     public static void Main()
     {
-        try 
-        {
-            //ButtonBuilder builder = new ButtonBuilder();
-            //UIClient client = new UIClient(builder);
-            //client.GetButtonWithIcon("иконка");
-            //IBuilder buttonBuilder = new ButtonBuilder();
-            //Director director = new Director();
-            //director.Builder = buttonBuilder;
-            //director.BuildMinimalButton("некий текст");
-            //buttonBuilder = new TextButtonBuilder();
-            //Director director1 = new Director();
-            //director1.Builder = buttonBuilder;
-            //director1.BuildMinimalButton("другой текст");
-            var director = new Director();
-            var buttonBuilder = new ButtonBuilder();
-            director.Builder = buttonBuilder;
-            director.BuildMinimalButton("text");
-            Console.WriteLine(buttonBuilder.GetButton());
+        Director director = new Director();
 
-            var textButtonBuilder = new TextButtonBuilder();
-            director.Builder = textButtonBuilder;
-            director.BuildMinimalButton("text");
-            Console.WriteLine(textButtonBuilder.GetInfo());
+        Console.WriteLine("--- Начало конструирования ---");
 
+        Console.WriteLine("\n[РАБОТА №1: Простая текстовая кнопка (TextButtonBuilder)]");
 
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+        var textBuilder = new TextButtonBuilder();
+
+        director.Builder = textBuilder;
+
+        director.BuildMinimalButton();
+
+        StringBuilder simpleButtonInfo = textBuilder.GetInfo();
+
+        Console.WriteLine("\n[РАБОТА №2: Кнопка с полным набором свойств (ButtonBuilder)]");
+
+        var buttonBuilder = new ButtonBuilder();
+
+        director.Builder = buttonBuilder;
+
+        director.BuildFullButton();
+
+        Button fullButton = buttonBuilder.GetButton();
     }
 }
 

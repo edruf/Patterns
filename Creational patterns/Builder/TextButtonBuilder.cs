@@ -10,7 +10,7 @@ namespace Builder
 {
     internal class TextButtonBuilder : IBuilder
     {
-        StringBuilder _textButton = new StringBuilder();
+        StringBuilder _textButton = new StringBuilder(" ");
 
         public TextButtonBuilder()
         {
@@ -19,28 +19,30 @@ namespace Builder
 
         public void Reset()
         {
-            _textButton.Clear();
+            _textButton = new StringBuilder();
+            _textButton.AppendLine("Text Button Configuration");
         }
         public void SetSizes(int height, int width)
         {
-            _textButton.Append(height);
-            _textButton.Append(width);
+            _textButton.AppendLine($"Height: {height}px, Width: {width}px");
         }
         public void SetBackground(string background)
         {
-            _textButton.Append(background);
+            _textButton.AppendLine($"Background: {background}");
         }
         public void SetText(string text)
         {
-            _textButton.Append(text);
+            _textButton.AppendLine($"Text Content: {text}");
         }
         public void SetIcon(string icon)
         {
-            _textButton.Append(icon);
+            _textButton.AppendLine($"Icon: {icon}");
         }
         public StringBuilder GetInfo()
         {
             var result = _textButton;
+            Console.WriteLine("\nBuilt Product Output");
+            Console.WriteLine(result.ToString());
             this.Reset();
             return result;
         }

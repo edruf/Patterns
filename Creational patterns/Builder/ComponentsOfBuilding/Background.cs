@@ -13,5 +13,7 @@ namespace Patterns_Builder.ComponentsOfBuilding
         {
             this.background = background;
         }
+
+        public override string ToString() => $"Background Color: {background}";
     }
 }

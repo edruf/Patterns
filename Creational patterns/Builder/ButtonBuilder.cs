@@ -37,10 +37,13 @@ namespace Patterns_Builder
         {
             _button.icon = new Icon(icon);
         }
+
         public Button GetButton()
         {
             var result = _button;
+            Console.WriteLine(result.ToString());
             this.Reset();
+
             return result;
         }
 

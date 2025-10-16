@@ -14,5 +14,16 @@ namespace Patterns_Builder.ComponentsOfBuilding
         public int? width { get; set; }
         public int? height { get; set; }
 
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("--- Full Button Product Configuration ---");
+            sb.AppendLine($"Sizes: Height={height}px, Width={width}px");
+            sb.AppendLine(background?.ToString() ?? "Background: Not Set");
+            sb.AppendLine(text?.ToString() ?? "Text: Not Set");
+            sb.AppendLine(icon?.ToString() ?? "Icon: Not Set");
+            return sb.ToString();
+        }
+
     }
 }

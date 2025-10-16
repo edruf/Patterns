@@ -13,5 +13,6 @@ namespace Patterns_Builder.ComponentsOfBuilding
         {
             this.icon = icon;
         }
+        public override string ToString() => $"Icon Symbol: {icon}";
     }
 }
