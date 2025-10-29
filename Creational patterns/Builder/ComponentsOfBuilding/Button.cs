@@ -24,6 +24,5 @@ namespace Patterns_Builder.ComponentsOfBuilding
             sb.AppendLine(icon?.ToString() ?? "Icon: Not Set");
             return sb.ToString();
         }
-
     }
 }

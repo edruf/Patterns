@@ -19,22 +19,6 @@ namespace Builder
             set { _builder = value; } 
         }
 
-        public void BuildMinimalButton() 
-        {
-            _builder.Reset();
-            _builder.SetSizes(20, 100);
-            _builder.SetText("Testing Simple Button");
-        }
-
-        public void BuildSimpleTextButton()
-        {
-            this._builder.Reset();
-            this._builder.SetSizes(150, 40);
-            this._builder.SetBackground("blue");
-            this._builder.SetText("Click Me");
-            this._builder.SetIcon(null);
-        }
-
         public void BuildFullButton() 
         {
             _builder.Reset();
@@ -44,13 +28,6 @@ namespace Builder
             _builder.SetBackground("SomeBackground");
         }
 
-        public void BuildCancelButton()
-        {
-            this._builder.Reset();
-            this._builder.SetSizes(120, 40);
-            this._builder.SetBackground("red");
-            this._builder.SetText("Отмена");
-            this._builder.SetIcon(null);
-        }
+
     }
 }

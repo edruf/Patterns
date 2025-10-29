@@ -8,7 +8,7 @@ namespace Patterns_Builder.ComponentsOfBuilding
 {
     internal class Icon
     {
-        public string icon;
+        private string icon;
         public Icon(string icon)
         {
             this.icon = icon;

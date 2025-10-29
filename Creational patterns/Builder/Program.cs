@@ -21,7 +21,7 @@ class Program
 
         director.Builder = textBuilder;
 
-        director.BuildMinimalButton();
+        director.BuildFullButton();
 
         StringBuilder simpleButtonInfo = textBuilder.GetInfo();
 

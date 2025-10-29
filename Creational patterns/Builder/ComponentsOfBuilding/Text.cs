@@ -9,7 +9,7 @@ namespace Patterns_Builder.ComponentsOfBuilding
 {
     internal class Text
     {
-        public string text;
+        private string text;
         public Text(string text)
         {
             this.text = text;

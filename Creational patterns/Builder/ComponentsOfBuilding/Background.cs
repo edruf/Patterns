@@ -8,7 +8,7 @@ namespace Patterns_Builder.ComponentsOfBuilding
 {
     internal class Background
     {
-        public string background;
+        private string background;
         public Background(string background)
         {
             this.background = background;
