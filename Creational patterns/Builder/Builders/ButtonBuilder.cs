@@ -19,7 +19,7 @@ namespace Builder.Builders
 
         public void Reset() 
         {
-            this._button = new Button();
+            _button = new Button();
         }
 
         public void SetSizes(int height, int width)
