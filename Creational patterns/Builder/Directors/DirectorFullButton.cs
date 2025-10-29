@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Builder
+namespace Builder.Directors
 {
-    internal class Director
+    internal class DirectorFullButton
     {
         private IBuilder _builder;
 
@@ -27,7 +27,5 @@ namespace Builder
             _builder.SetIcon("SomeIcon");
             _builder.SetBackground("SomeBackground");
         }
-
-
     }
 }

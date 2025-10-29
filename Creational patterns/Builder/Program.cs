@@ -1,5 +1,5 @@
-﻿using Builder;
-using Builder.Builders;
+﻿using Builder.Builders;
+using Builder.Directors;
 using Patterns_Builder.ComponentsOfBuilding;
 using System.Data.SqlTypes;
 using System.Text;
@@ -11,7 +11,7 @@ class Program
 {
     public static void Main()
     {
-        Director director = new Director();
+        DirectorFullButton directorFullButton = new DirectorFullButton();
 
         Console.WriteLine("--- Начало конструирования ---");
 
@@ -19,19 +19,21 @@ class Program
 
         var textBuilder = new TextButtonBuilder();
 
-        director.Builder = textBuilder;
+        directorFullButton.Builder = textBuilder;
 
-        director.BuildFullButton();
+        directorFullButton.BuildFullButton();
 
         StringBuilder simpleButtonInfo = textBuilder.GetInfo();
 
-        Console.WriteLine("\n[РАБОТА №2: Кнопка с полным набором свойств (ButtonBuilder)]");
+        Console.WriteLine("\n[РАБОТА №2: Кнопка с минимальным набором свойств (ButtonBuilder)]");
+
+        DirectorMinimalButton directorMinimalButton = new DirectorMinimalButton();
 
         var buttonBuilder = new ButtonBuilder();
 
-        director.Builder = buttonBuilder;
+        directorMinimalButton.Builder = buttonBuilder;
 
-        director.BuildFullButton();
+        directorMinimalButton.BuildMinimalButton();
 
         Button fullButton = buttonBuilder.GetButton();
     }
