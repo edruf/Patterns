@@ -10,11 +10,5 @@ class Program
         button1.OnDoubleClick();
         Console.WriteLine(button1.GetState());
         Console.WriteLine("\n ==================== \n");
-
-        WinButton button2 = WinButton.GetInstance("Кнопка 2", "red");
-        Console.WriteLine("Второй доступ (после изменения):");
-        button2.OnClick();
-        button2.OnDoubleClick();
-        Console.WriteLine(button2.GetState());
     }
 }

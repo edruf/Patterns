@@ -9,6 +9,7 @@ namespace Patterns_Prototype
     internal interface IButton : ICopyable<WinButton>
     {
         void OnClick();
+
         void OnDoubleClick();
     }
 }

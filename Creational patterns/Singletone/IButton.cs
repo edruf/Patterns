@@ -7,6 +7,7 @@ namespace Patterns__Singletone
     internal interface IButton
     {
         void OnClick();
+
         void OnDoubleClick();
     }
 }

@@ -17,6 +17,7 @@ namespace Patterns__Singletone
             _text = text;
             _color = color;
         }
+
         public static WinButton GetInstance(string text = "Старт", string color = "blue")
         {
             if (_instance == null)
@@ -25,6 +26,7 @@ namespace Patterns__Singletone
             }
             return _instance;
         }
+
         public void OnClick()
         {
             Console.WriteLine($"Windows кнопка '{_text}' нажата (цвет: {_color})");
@@ -34,6 +36,7 @@ namespace Patterns__Singletone
         {
             Console.WriteLine($"Windows кнопка '{_text}' нажата дважды (цвет: {_color})");
         }
+
         public string GetState()
         {
             return $"text: {_text}, color: {_color}";
