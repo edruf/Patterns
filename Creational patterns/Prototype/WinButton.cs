@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prototype;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -11,13 +12,23 @@ namespace Patterns_Prototype
     {
         private string _text;
         private string _color;
+        private string _icon;
+        private ButtonProperties _buttonProperties;
 
-        public WinButton(string text, string color)
+        public WinButton(string text, string color, string icon, ButtonProperties buttonProperties)
         {
-            if (text == null || color == null) throw new ArgumentNullException();
+            if (text == null || color == null | buttonProperties == null) throw new ArgumentNullException();
             _text = text;
             _color = color;
+            _icon = icon;
+            _buttonProperties = buttonProperties;
         }
+
+        public void SetBorderWidth(int borderWidth)
+        {
+            _buttonProperties.BorderWidth = borderWidth;
+            Console.WriteLine($"... {this._text} рамка изменена на {borderWidth}px");
+        }   
 
         public void OnClick()
         {
@@ -31,13 +42,13 @@ namespace Patterns_Prototype
 
         public WinButton Copy()
         {
-            WinButton copy = new WinButton(_text, _color);
+            WinButton copy = new WinButton(_text, _color, _icon, _buttonProperties.Copy());
             return copy;
         }
 
         public override string ToString()
         {
-            return "text : " + _text + ", " + " color : " + _color;
+            return $"Text: {_text}, Color: {_color}, Icon: {_icon}, Properties: {_buttonProperties}";
         }
     }
 }
