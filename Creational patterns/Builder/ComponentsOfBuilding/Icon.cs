@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patterns_Builder.ComponentsOfBuilding
 {
-    internal class Icon
+    public class Icon
     {
         private string icon;
         public Icon(string icon)

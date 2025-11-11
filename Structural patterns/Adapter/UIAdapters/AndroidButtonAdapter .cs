@@ -10,7 +10,7 @@ namespace Adapter.UIAdapters
         AndroidUIButton _androidButton;
         public AndroidButtonAdapter(AndroidUIButton androidButton)
         {
-            this._androidButton = androidButton;
+            _androidButton = androidButton;
         }
         public void OnClick() => _androidButton.Press();
         public void OnDoubleClick() => _androidButton.DoublePress();

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Patterns_Builder
 {
-    internal interface IBuilder
+    public interface IBuilder
     {
         void Reset();
 

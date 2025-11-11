@@ -10,7 +10,7 @@ namespace Adapter.UIAdapters
         IosUIButton _iosButton;
         public IosButtonAdapter(IosUIButton iosButton) 
         {
-            iosButton = _iosButton;
+            _iosButton = iosButton;
         }
 
         public void OnClick() => _iosButton.Tap();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patterns_Builder.ComponentsOfBuilding
 {
-    internal class Button
+    public class Button
     {
         public Icon? icon { get; set; }
         public Text? text { get; set; }
@@ -17,7 +17,6 @@ namespace Patterns_Builder.ComponentsOfBuilding
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("--- Full Button Product Configuration ---");
             sb.AppendLine($"Sizes: Height={height}px, Width={width}px");
             sb.AppendLine(background?.ToString() ?? "Background: Not Set");
             sb.AppendLine(text?.ToString() ?? "Text: Not Set");

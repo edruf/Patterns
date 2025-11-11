@@ -10,7 +10,7 @@ internal class Program
         winButton.OnClick();
         winButton.OnDoubleClick();
 
-        // Адаптированная Android-кнопка
+        // Адаптированная Android-кнопка    
         IButton androidButton = new AndroidButtonAdapter(new AndroidUIButton());
         androidButton.OnClick();
         androidButton.OnDoubleClick();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Builder.Directors
 {
-    internal class DirectorCancelButton
+    public class DirectorCancelButton
     {
         private IBuilder _builder;
         public IBuilder Builder

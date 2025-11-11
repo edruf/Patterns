@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Builder.Builders
 {
-    internal class ButtonBuilder : IBuilder
+    public class ButtonBuilder : IBuilder
     {
         Button _button = new Button();
 

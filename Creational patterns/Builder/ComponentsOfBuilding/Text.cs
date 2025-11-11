@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Patterns_Builder.ComponentsOfBuilding
 {
-    internal class Text
+    public class Text
     {
         private string text;
         public Text(string text)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Builder.Directors
 {
-    internal class DirectorMinimalButton
+    public class DirectorMinimalButton
     {
         private IBuilder _builder;
         public IBuilder Builder

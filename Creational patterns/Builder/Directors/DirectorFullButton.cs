@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Builder.Directors
 {
-    internal class DirectorFullButton
+    public class DirectorFullButton
     {
         private IBuilder _builder;
 

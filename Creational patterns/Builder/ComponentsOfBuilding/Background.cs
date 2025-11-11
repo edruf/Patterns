@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patterns_Builder.ComponentsOfBuilding
 {
-    internal class Background
+    public class Background
     {
         private string background;
         public Background(string background)
