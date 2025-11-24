@@ -4,7 +4,7 @@ class Program
     public static void Main() 
     { 
         IButton button = new WinButton();
-        IButton decoratedButton = new AllowDecorator(button, UserRole.User);
+        IButton decoratedButton = new LoggerDecorator(button);
         decoratedButton.OnClick(); 
         decoratedButton.OnDoubleClick();
     }

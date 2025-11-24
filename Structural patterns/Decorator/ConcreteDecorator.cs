@@ -5,25 +5,26 @@ using System.Text;
 
 namespace Decorator
 {
-    enum UserRole
-    {
-        Admin,
-        User,
-        Guest
-    }
 
-    internal class AllowDecorator : BaseDecorator
+    internal class LoggerDecorator : BaseDecorator
     {
-        private UserRole role;
-        public AllowDecorator(IButton button, UserRole role) : base(button)
+        private IButton _button;
+        public LoggerDecorator(IButton button) : base(button)
         {
-            this.role = role;
+            _button = button;
         }
+
+        public string Logger()
+        {
+            TimeOnly time = TimeOnly.FromDateTime(DateTime.Now);
+            return ($"кнопка нажата пользователем в {time}");
+        }
+
         public override void OnClick()
         {
-
-            if(role == UserRole.Admin) base.OnClick();
-            else Console.WriteLine("Доступ запрещен");
+            string log = Logger();
+            Console.WriteLine(log);
+            _button.OnClick();
         }
     }    
 }
