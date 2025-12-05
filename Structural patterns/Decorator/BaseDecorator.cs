@@ -6,10 +6,10 @@ namespace Decorator
 {
     internal abstract class BaseDecorator : IButton
     {
-        private IButton _button;
+        private IButton Button { get; }
         public BaseDecorator(IButton button)
         {
-            _button = button;
+            Button = button;
         }
 
         public virtual void OnClick() => _button.OnClick();

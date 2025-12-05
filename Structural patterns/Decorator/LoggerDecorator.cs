@@ -8,10 +8,8 @@ namespace Decorator
 
     internal class LoggerDecorator : BaseDecorator
     {
-        private IButton _button;
         public LoggerDecorator(IButton button) : base(button)
         {
-            _button = button;
         }
 
         public string Logger()
@@ -24,7 +22,7 @@ namespace Decorator
         {
             string log = Logger();
             Console.WriteLine(log);
-            _button.OnClick();
+            Button.OnClick();
         }
     }    
 }
