@@ -4,10 +4,14 @@ using System.Text;
 
 namespace Chain.Handlers
 {
-    internal interface Handler
+    internal abstract class Handler
     {
-        public void setNext(Handler handler); 
-        
-        public void handle(Button button);
+        protected Handler _nextHandler;
+
+        public Handler(Handler handler) 
+        { 
+            _nextHandler = handler;
+        }
+        public abstract void handle(Button button);
     }
 }

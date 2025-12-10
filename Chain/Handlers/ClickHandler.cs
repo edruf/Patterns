@@ -6,14 +6,12 @@ namespace Chain.Handlers
 {
     internal class ClickHandler : Handler
     {
-        private Handler _nextHandler;
 
-        public void setNext(Handler handler)
+        public ClickHandler(Handler nextHandler) : base(nextHandler)
         {
-            _nextHandler = handler;
         }
 
-        public void handle(Button button) 
+        public override void handle(Button button) 
         {
             Console.WriteLine("С кнопкой произведено действие");
         }

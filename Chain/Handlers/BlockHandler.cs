@@ -6,14 +6,12 @@ namespace Chain.Handlers
 {
     internal class BlockHandler : Handler
     {
-        private Handler _nextHandler;
 
-        public void setNext(Handler handler) 
+        public BlockHandler(Handler nextHandler) : base(nextHandler)
         {
-            _nextHandler = handler;
         }
 
-        public void handle(Button button)
+        public override void handle(Button button)
         {
             if (button.IsBlocked())
             {

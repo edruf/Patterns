@@ -5,9 +5,8 @@ class Program
 {
     static void Main()
     {
-        Handler blockHandler = new BlockHandler();
-        Handler clickHandler = new ClickHandler();
-        blockHandler.setNext(clickHandler);
+        Handler clickHandler = new ClickHandler(null);
+        Handler blockHandler = new BlockHandler(clickHandler);
         Button button = new Button(blockHandler);
         button.OnClick();
         button.Block();
