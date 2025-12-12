@@ -12,6 +12,6 @@ namespace Chain.Handlers
         { 
             _nextHandler = handler;
         }
-        public abstract void handle(Button button);
+        public abstract void Handle(Button button);
     }
 }

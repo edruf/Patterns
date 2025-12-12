@@ -32,7 +32,7 @@ namespace Chain
 
         public void OnClick()
         {
-            _handler.handle(this);
+            _handler.Handle(this);
         }
     }
 }

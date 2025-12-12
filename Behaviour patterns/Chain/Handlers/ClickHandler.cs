@@ -11,7 +11,7 @@ namespace Chain.Handlers
         {
         }
 
-        public override void handle(Button button) 
+        public override void Handle(Button button) 
         {
             Console.WriteLine("С кнопкой произведено действие");
         }
