@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Observer.Observers
 {
-    internal interface ISubject
+    internal interface IObserver
     {
-        void Attach(IObserver observer);
-        void Detach(IObserver observer);
-        void Notify();
+        void Update(ISubject subject);    
     }
 }

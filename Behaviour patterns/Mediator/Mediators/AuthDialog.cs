@@ -10,32 +10,25 @@ namespace Mediator.Mediators
         private TextBox _emailBox;
         private TextBox _passwordBox;
         private Button _loginButton;
-
-        public AuthDialog(TextBox email, TextBox password, Button login)
+        private AuthenticationLogic _logic;
+        public AuthDialog(TextBox email, TextBox password, Button login, AuthenticationLogic logic)
         {
             _emailBox = email;
             _passwordBox = password;
             _loginButton = login;
+            _logic = logic;
+
+            _emailBox.SetMediator(this);
+            _passwordBox.SetMediator(this);
+            _loginButton.SetMediator(this);
         }
 
         public void Notify(UIComponent sender, string ev) 
         {
-            if (ev == "TextChanged") 
-            {
-                if (!_emailBox.IsEmpty() && !_passwordBox.IsEmpty())
-                {
-                    _loginButton.Enable();
-                }
-                else
-                {
-                    _loginButton.Disable();
-                }
-            }
-
-            if (ev == "ButtonClicked") 
-            {
-                Console.WriteLine("AuthDialog: Успешная аутентификация! Закрываю окно...");
-            }
+            _logic.Process(sender, ev, _emailBox, _passwordBox, _loginButton);
         }
     }
 }
+
+
+

@@ -1,4 +1,5 @@
-﻿using Mediator.Mediators;
+﻿using Mediator;
+using Mediator.Mediators;
 using Mediator.UIComponents;
 
 class Program
@@ -8,12 +9,11 @@ class Program
         TextBox emailBox = new TextBox(null);
         TextBox passwordBox = new TextBox(null);
         Button loginButton = new Button(null);
+        AuthenticationLogic logic = new AuthenticationLogic();
 
-        AuthDialog mediator = new AuthDialog(emailBox, passwordBox, loginButton);
+        AuthDialog mediator = new AuthDialog(emailBox, passwordBox, loginButton, logic);
 
-        emailBox.SetMediator(mediator);
-        passwordBox.SetMediator(mediator);
-        loginButton.SetMediator(mediator);
+        logic.Process(mediator, "init", emailBox, passwordBox, loginButton);
 
         Console.WriteLine("\n--- СЦЕНАРИЙ 1: Поля пустые ---");
         loginButton.Click(); 
