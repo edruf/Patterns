@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverWithEvents", "Behav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "Behaviour patterns\State\State.csproj", "{1063384A-59DC-476D-B229-CDFEE8F9C79D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Behaviour patterns\Strategy\Strategy.csproj", "{BA10887B-310A-48FA-B572-62FC22FA3899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "Behaviour patterns\TemplateMethod\TemplateMethod.csproj", "{1DDEFCF3-4553-415F-BCA3-FBAA911BE3CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +127,14 @@ Global
 		{1063384A-59DC-476D-B229-CDFEE8F9C79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1063384A-59DC-476D-B229-CDFEE8F9C79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1063384A-59DC-476D-B229-CDFEE8F9C79D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA10887B-310A-48FA-B572-62FC22FA3899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA10887B-310A-48FA-B572-62FC22FA3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA10887B-310A-48FA-B572-62FC22FA3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA10887B-310A-48FA-B572-62FC22FA3899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DDEFCF3-4553-415F-BCA3-FBAA911BE3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DDEFCF3-4553-415F-BCA3-FBAA911BE3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DDEFCF3-4553-415F-BCA3-FBAA911BE3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DDEFCF3-4553-415F-BCA3-FBAA911BE3CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +158,8 @@ Global
 		{508BFE92-4557-4007-B4DD-870526FD10D6} = {CA18F164-BCB1-4A89-9143-D54BC3A73601}
 		{BE07BE97-8A14-4D6E-A8B4-94B3F700CAA1} = {CA18F164-BCB1-4A89-9143-D54BC3A73601}
 		{1063384A-59DC-476D-B229-CDFEE8F9C79D} = {CA18F164-BCB1-4A89-9143-D54BC3A73601}
+		{BA10887B-310A-48FA-B572-62FC22FA3899} = {CA18F164-BCB1-4A89-9143-D54BC3A73601}
+		{1DDEFCF3-4553-415F-BCA3-FBAA911BE3CC} = {CA18F164-BCB1-4A89-9143-D54BC3A73601}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1A507BF-A1A0-4CED-A6BF-6A33B5246BC0}
