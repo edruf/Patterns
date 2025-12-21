@@ -6,30 +6,27 @@ namespace State.States
 {
     internal class ModerationState : CurrentState
     {
-        public override bool IsGood()
+        public override bool IsGood(Document document)
         {
-            bool hasEnoughLength = _document.Content.Length > 50;
-            bool noSpam = !_document.Content.Contains("реклама");
-
-            return hasEnoughLength && noSpam;
-        }
-        public override void Publish()
-        {
-            if (IsGood())
-            {
-                Console.WriteLine("Moderation: Проверка пройдена. Публикуем!");
-                _document.TransitionTo(new PublishedState());
-            }
-            else
-            {
-                Console.WriteLine("Moderation: ОШИБКА! Текст слишком короткий. Возврат в черновик.");
-                _document.TransitionTo(new DraftState());
-            }
+            return document.Content.Length > 5 && !document.Content.Contains("спам");
         }
 
-        public override void Cancel()
+        public override CurrentState Publish(Document document)
         {
-            _document.TransitionTo(new DraftState());
+            if (IsGood(document))
+            {
+                Console.WriteLine("Moderation: Проверка пройдена. Публикуем.");
+                return new PublishedState();
+            }
+
+            Console.WriteLine("Moderation: ОШИБКА (мало текста или спам). Возврат в Черновик.");
+            return new DraftState();
+        }
+
+        public override CurrentState Cancel(Document document)
+        {
+            Console.WriteLine("Moderation: Отклонено вручную.");
+            return new DraftState();
         }
     }
 }

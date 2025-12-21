@@ -7,16 +7,11 @@ namespace State.States
 {
     internal abstract class CurrentState
     {
-        protected Document _document;
-        public void SetContext(Document document) 
-        { 
-            _document = document;
-        }
-        public abstract bool IsGood();
+        public abstract bool IsGood(Document document);
 
-        public abstract void Publish();
+        public abstract CurrentState Publish(Document document);
 
-        public abstract void Cancel();
+        public abstract CurrentState Cancel(Document document);
 
     }
 }

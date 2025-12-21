@@ -9,20 +9,22 @@ namespace State
     {
         private CurrentState _state;
         public string Content { get; set; } = "";
-        public Document(CurrentState state)
+
+        public Document()
         {
-            TransitionTo(state);
+            _state = new DraftState();
         }
 
-        public void TransitionTo(CurrentState state) 
+        public void Publish()
         {
-            Console.WriteLine($"Document: Переход в состояние {state.GetType().Name}.");
-            _state = state;
-            _state.SetContext(this);
+            _state = _state.Publish(this);
         }
 
-        public void Publish() => _state.Publish();
-        public void Cancel() => _state.Cancel();
-        public bool CheckIfGood() => _state.IsGood();  
+        public void Cancel()
+        {
+            _state = _state.Cancel(this);
+        }
+
+        public string GetStateName() => _state.GetType().Name;
     }
 }

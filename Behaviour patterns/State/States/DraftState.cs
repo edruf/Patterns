@@ -6,26 +6,28 @@ namespace State.States
 {
     internal class DraftState : CurrentState
     {
-        public override bool IsGood() 
+        public override bool IsGood(Document document)
         {
-            return !string.IsNullOrEmpty(_document.Content);
-        }
-        public override void Publish()
-        {
-            if (IsGood())
-            {
-                Console.WriteLine("Draft: Документ заполнен. Отправляем на модерацию.");
-                _document.TransitionTo(new ModerationState());
-            }
-            else
-            {
-                Console.WriteLine("Draft: Нельзя отправить пустой черновик!");
-            }
+            return !string.IsNullOrEmpty(document.Content);
         }
 
-        public override void Cancel()
+        public override CurrentState Publish(Document document)
         {
-            Console.WriteLine("Draft: Черновик удален.");
+            if (IsGood(document))
+            {
+                Console.WriteLine("Draft: Текст есть. Переход к Модерации.");
+                return new ModerationState(); 
+            }
+
+            Console.WriteLine("Draft: Текст пустой. Нельзя отправить.");
+            return this; 
+        }
+
+        public override CurrentState Cancel(Document document)
+        {
+            Console.WriteLine("Draft: Очищаем черновик.");
+            document.Content = ""; 
+            return this;
         }
 
     }

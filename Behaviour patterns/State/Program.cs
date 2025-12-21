@@ -1,20 +1,27 @@
 ﻿using State;
 namespace State.States;
+
 class Program
 {
     static void Main()
     {
-        var doc = new Document(new DraftState());
-        doc.Content = "Коротко";
+        var doc = new Document();
 
-        doc.Publish(); 
-        doc.Publish(); 
+        Console.WriteLine($"Состояние: {doc.GetStateName()}");
 
-        doc.Content = "Это очень длинный и качественный текст для публикации";
-        doc.Publish(); 
+        Console.WriteLine("\n--- Попытка 1: Пустой текст ---");
         doc.Publish(); 
 
+        Console.WriteLine("\n--- Попытка 2: Плохой текст (короткий) ---");
+        doc.Content = "Спам";
+        doc.Publish();  
         doc.Publish(); 
-        doc.Cancel();  
+
+        Console.WriteLine("\n--- Попытка 3: Хороший текст ---");
+        doc.Content = "Отличная статья про паттерны";
+        doc.Publish(); 
+        doc.Publish(); 
+
+        Console.WriteLine($"\nИтог: {doc.GetStateName()}");
     }
 }

@@ -6,19 +6,18 @@ namespace State.States
 {
     internal class PublishedState : CurrentState
     {
-        public override bool IsGood()
+        public override bool IsGood(Document document) => true; 
+
+        public override CurrentState Publish(Document document)
         {
-            return true;
-        }
-        public override void Publish()
-        {
-            Console.WriteLine("Published: Документ уже опубликован. Ничего не делаем.");
+            Console.WriteLine("Published: Уже на сайте.");
+            return this;
         }
 
-        public override void Cancel()
+        public override CurrentState Cancel(Document document)
         {
-            Console.WriteLine("Published: Снимаю с публикации...");
-            _document.TransitionTo(new DraftState());
+            Console.WriteLine("Published: Снимаем с публикации...");
+            return new DraftState();
         }
     }
 }
