@@ -7,24 +7,10 @@ namespace Mediator
 {
     internal class AuthenticationLogic
     {
-        public void Process(object sender, string ev, TextBox email, TextBox pass, Button login) 
+        public void ExecuteLogin(string email)
         {
-            if (ev == "TextChanged")
-            {
-                if (!email.IsEmpty() && !pass.IsEmpty())
-                {
-                    login.Enable();
-                }
-                else
-                {
-                    login.Disable();
-                }
-            }
-
-            if (ev == "ButtonClicked")
-            {
-                Console.WriteLine("AuthDialog: Успешная аутентификация! Закрываю окно...");
-            }
+            Console.WriteLine($"[Logic] Проверяем базу данных для: {email}...");
+            Console.WriteLine("[Logic] Доступ разрешен. Добро пожаловать!");
         }
     }
 }

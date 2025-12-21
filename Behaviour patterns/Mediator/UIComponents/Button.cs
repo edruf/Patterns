@@ -7,11 +7,19 @@ namespace Mediator.UIComponents
 {
     internal class Button : UIComponent
     {
-        public bool IsEnabled { get; private set; } = false;
+        public bool IsEnabled { get; private set; } 
 
-        public Button(IMediator mediator) 
+        public Button(IMediator mediator) : base(mediator) { }
+
+        public void RefreshState(string email, string pass)
         {
-            SetMediator(mediator);
+            bool isValid = !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(pass);
+
+            if (IsEnabled != isValid)
+            {
+                IsEnabled = isValid;
+                Console.WriteLine($"[Button] Состояние изменено: IsEnabled = {IsEnabled}");
+            }
         }
 
         public void Enable()
@@ -28,10 +36,13 @@ namespace Mediator.UIComponents
 
         public void Click()
         {
-            if (IsEnabled) 
+            if (IsEnabled)
             {
-                Console.WriteLine("Button: Вход выполнен!");
-                Notify("ButtonClicked");
+                Notify("LoginAction");
+            }
+            else
+            {
+                Console.WriteLine("[Button] Клик проигнорирован (кнопка неактивна).");
             }
         }
     }

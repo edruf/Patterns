@@ -6,25 +6,19 @@ class Program
 {
     static void Main()
     {
-        TextBox emailBox = new TextBox(null);
-        TextBox passwordBox = new TextBox(null);
-        Button loginButton = new Button(null);
-        AuthenticationLogic logic = new AuthenticationLogic();
-
-        AuthDialog mediator = new AuthDialog(emailBox, passwordBox, loginButton, logic);
-
-        logic.Process(mediator, "init", emailBox, passwordBox, loginButton);
+        AuthDialog dialog = new AuthDialog();
 
         Console.WriteLine("\n--- СЦЕНАРИЙ 1: Поля пустые ---");
-        loginButton.Click(); 
+        dialog.LoginBtn.Click();
 
         Console.WriteLine("\n--- СЦЕНАРИЙ 2: Заполняем только Email ---");
-        emailBox.SetText("test@mail.ru");
+        dialog.Email.SetText("test@mail.ru");
+        dialog.LoginBtn.Click();
 
         Console.WriteLine("\n--- СЦЕНАРИЙ 3: Заполняем Пароль ---");
-        passwordBox.SetText("12345");
+        dialog.Pass.SetText("12345");
 
         Console.WriteLine("\n--- СЦЕНАРИЙ 4: Кликаем активную кнопку ---");
-        loginButton.Click();
+        dialog.LoginBtn.Click();
     }
 }

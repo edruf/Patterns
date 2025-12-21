@@ -8,7 +8,7 @@ namespace Mediator.UIComponents
     internal abstract class UIComponent
     {
         protected IMediator _mediator;
-        public void SetMediator(IMediator mediator)
+        public UIComponent(IMediator mediator)
         {
             _mediator = mediator;
         }

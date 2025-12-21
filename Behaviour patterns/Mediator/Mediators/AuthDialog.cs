@@ -10,22 +10,30 @@ namespace Mediator.Mediators
         private TextBox _emailBox;
         private TextBox _passwordBox;
         private Button _loginButton;
-        private AuthenticationLogic _logic;
-        public AuthDialog(TextBox email, TextBox password, Button login, AuthenticationLogic logic)
+        private AuthenticationLogic _logic = new AuthenticationLogic();
+        public AuthDialog()
         {
-            _emailBox = email;
-            _passwordBox = password;
-            _loginButton = login;
-            _logic = logic;
-
-            _emailBox.SetMediator(this);
-            _passwordBox.SetMediator(this);
-            _loginButton.SetMediator(this);
+            _emailBox = new TextBox(this);
+            _passwordBox = new TextBox(this);
+            _loginButton = new Button(this);    
+        
         }
+
+        public TextBox Email => _emailBox;
+        public TextBox Pass => _passwordBox;
+        public Button LoginBtn => _loginButton;
 
         public void Notify(UIComponent sender, string ev) 
         {
-            _logic.Process(sender, ev, _emailBox, _passwordBox, _loginButton);
+            if (ev == "TextChanged")
+            {
+                _loginButton.RefreshState(_emailBox.Text, _passwordBox.Text);
+            }
+
+            if (ev == "ButtonClicked")
+            {
+                _logic.ExecuteLogin(_emailBox.Text);
+            }
         }
     }
 }

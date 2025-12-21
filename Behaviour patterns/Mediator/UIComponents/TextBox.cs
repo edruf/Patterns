@@ -8,10 +8,7 @@ namespace Mediator.UIComponents
     internal class TextBox : UIComponent
     {
         public string Text { get; set; } = string.Empty;
-        public TextBox(IMediator mediator) 
-        {
-            SetMediator(mediator);
-        }
+        public TextBox(IMediator mediator) : base(mediator){}
 
         public void SetText(string newText) 
         { 
